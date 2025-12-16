@@ -22,9 +22,15 @@ public class Consulta {
     @Column(name = "data_hora", nullable = false)
     private LocalDateTime dataHora;
 
+    
+   //Especialidade médica relacionada à consulta.
+    //Campo obrigatório com tamanho máximo de 50 caracteres.
+     
     @Column(nullable = false, length = 50)
     private String especialidade;
 
+     //Relacionamento muitos para um com a entidade Paciente
+     //Cada consulta pertence a um único paciente
     @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;

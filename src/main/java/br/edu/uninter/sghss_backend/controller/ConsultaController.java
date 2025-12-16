@@ -11,10 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.uninter.sghss_backend.entity.Consulta;
 import br.edu.uninter.sghss_backend.repository.ConsultaRepository;
 
+
+/**
+ * Controller responsável por expor os endpoints REST
+ * relacionados às consultas médicas.
+ */
 @RestController
 @RequestMapping("/consultas")
 public class ConsultaController {
-
+    
+    //faz comunicação com o banco de dados
     private final ConsultaRepository repository;
 
     public ConsultaController(ConsultaRepository repository) {

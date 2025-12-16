@@ -16,11 +16,36 @@ public class PacienteService {
         this.repository = repository;
     }
 
+    // CRIAR
     public Paciente salvar(Paciente paciente) {
         return repository.save(paciente);
     }
 
+    // LISTAR
     public List<Paciente> listarTodos() {
         return repository.findAll();
     }
+
+    // ATUALIZAR
+    public Paciente atualizar(Long id, Paciente dadosAtualizados) {
+        Paciente paciente = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Paciente não encontrado"));
+
+        paciente.setNome(dadosAtualizados.getNome());
+        paciente.setCpf(dadosAtualizados.getCpf());
+        paciente.setDataNascimento(dadosAtualizados.getDataNascimento());
+        paciente.setTelefone(dadosAtualizados.getTelefone());
+
+        return repository.save(paciente);
+    }
+
+    // DELETAR
+    public void deletar(Long id) {
+    if (!repository.existsById(id)) {
+        throw new RuntimeException("Paciente não encontrado");
+    }
+    repository.deleteById(id);
 }
+
+}
+

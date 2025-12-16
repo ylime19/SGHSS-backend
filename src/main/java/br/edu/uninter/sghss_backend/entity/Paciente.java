@@ -12,20 +12,31 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "pacientes")
 public class Paciente {
+    
 
+
+    // Identificador único do paciente
+    // Chave primaria gerada automaticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    // Nome do paciente obrigatorio
     @Column(nullable = false, length = 100)
     private String nome;
 
+   // cpf do paciente obrigatório
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
+
+    // data de nascimentodo paciente obrigatório
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
+ 
 
+   //telefone do paciente
     @Column(length = 20)
     private String telefone;
 

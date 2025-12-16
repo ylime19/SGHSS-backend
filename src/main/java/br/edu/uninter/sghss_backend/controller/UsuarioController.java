@@ -15,6 +15,10 @@ public class UsuarioController {
 
     private final UsuarioRepository repository;
 
+    
+    //Construtor utilizado para injeção de dependência.
+    //O Spring injeta automaticamente a implementação do UsuarioRepository.
+     
     public UsuarioController(UsuarioRepository repository) {
         this.repository = repository;
     }
