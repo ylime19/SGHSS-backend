@@ -31,7 +31,6 @@ O projeto segue o padrão de arquitetura em camadas:
 
 A aplicação será iniciada em:
 http://localhost:8080
-http://localhost:8080/h2console
 
 ## Endpoints Principais
 Pacientes
