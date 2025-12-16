@@ -36,6 +36,8 @@ http://localhost:8080
 Pacientes
 POST /pacientes – Cadastrar paciente
 GET /pacientes – Listar pacientes
+PUT /pacientes/id - Atualizar paciente
+DELETE /pacientes/id - Deletar paciente
 
 Consultas
 POST /consultas – Agendar consulta
